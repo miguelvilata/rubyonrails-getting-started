@@ -18,6 +18,7 @@ help:
 	@echo "  make recreate       - Recreate containers"
 	@echo "  make clean          - Stop the project and remove Docker containers"
 	@echo "  make clean-all      - Clean and also remove Docker images and volumes"
+	@echo "  make ruby-shell     - Ruby container shell"
 
 # Start the Ruby on Rails project using Docker
 start:
@@ -41,7 +42,7 @@ recreate:
 
 # Run tests for the Ruby on Rails project
 test:
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) run --rm web bundle exec rails test
+	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) run --rm app ./bin/rails test
 
 # Stop the project and remove Docker containers
 clean: stop
@@ -51,5 +52,9 @@ clean: stop
 clean-all: clean
 	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down -v
 
-.PHONY: help start stop restart init test clean clean-all
+# Shell
+ruby-shell:
+	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) run --rm app /bin/bash
+
+.PHONY: help start stop restart init test clean clean-all ruby-shell
 
