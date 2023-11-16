@@ -1,24 +1,29 @@
-# README
+# Ruby on Rails Getting Started Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Ruby on Rails project created by following the official Rails Getting Started guide.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Make sure you have the following installed on your machine:
 
-* System dependencies
+- GNU Make >= 4.2.1 
+- Docker >= 20.10.22
 
-* Configuration
+## Getting Started
 
-* Database creation
+1. Clone the repository:
 
-* Database initialization
+   ```bash
+   git clone https://github.com/miguelvilata/rubyonrails-getting-started && cd rubyonrails-getting-started 
 
-* How to run the test suite
+2. Init containers:
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```make init
 
-* Deployment instructions
+3. Start app:
 
-* ...
+   ```make start
+
+4. Execute tests:
+
+   ```make test
