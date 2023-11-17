@@ -18,12 +18,13 @@ Make sure you have the following installed on your machine:
 
 2. Init containers:
 
-   ```make init
+   ```bash
+   make init
 
 3. Start app:
 
-   ```make start
+   ```bash
+   make start
 
-4. Execute tests:
 
-   ```make test
+Then access to http://localhost:3000
